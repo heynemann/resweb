@@ -9,13 +9,14 @@ import datetime
 
 TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), 'templates')
 class ResWeb(pystache.TemplateSpec):
-    template_path = TEMPLATE_PATH
-    renderer = pystache.Renderer(search_dirs=template_path)
+    #template_path = TEMPLATE_PATH
+    renderer = pystache.Renderer(search_dirs=TEMPLATE_PATH)
 
     def __init__(self, host):
         self.resq = host
 
     def render(self):
+        import ipdb;ipdb.set_trace()
         return self.renderer.render(self)
 
     def media_folder(self):
